@@ -9,8 +9,8 @@ from datetime import datetime
 try:
     from config import TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, TELEGRAM_ENABLED
 except ImportError:
-    TELEGRAM_BOT_TOKEN = '8645512067:AAHwXrUH9z8HSJom8xjhrO3Rewfq5AiJE5A'
-    TELEGRAM_CHAT_ID = '1331491729'
+    TELEGRAM_BOT_TOKEN = '****************************************************'
+    TELEGRAM_CHAT_ID = '************************'
     TELEGRAM_ENABLED = False
 
 
