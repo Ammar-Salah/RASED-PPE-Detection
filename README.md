@@ -468,17 +468,32 @@ PORT = 5000
 
 ---
 
-## 🤝 Contributing
+## 👨‍💻 Meet the Team
 
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/new-feature`)
-3. **Commit** your changes (`git commit -m 'Add new feature'`)
-4. **Push** to the branch (`git push origin feature/new-feature`)
-5. **Open** a Pull Request
-
----
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="33%">
+        <a href="https://github.com/Sobhyi">
+          <img src="https://github.com/Sobhyi.png" width="120px;" alt="Abdel Rahman Sobhy" style="border-radius:50%"/><br />
+          <sub><b>Abdel Rahman Sobhy</b></sub>
+        </a>
+      </td>
+      <td align="center" width="33%">
+        <a href="https://github.com/Ammar-Salah">
+          <img src="https://github.com/Ammar-Salah.png" width="120px;" alt="Ammar Salah" style="border-radius:50%"/><br />
+          <sub><b>Ammar Salah</b></sub>
+        </a>
+      </td>
+      <td align="center" width="33%">
+        <a href="https://github.com/ramiz-sayed">
+          <img src="https://github.com/ramiz-sayed.png" width="120px;" alt="Ramiz Sayed" style="border-radius:50%"/><br />
+          <sub><b>Ramiz Sayed</b></sub>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ## 📄 License
 
