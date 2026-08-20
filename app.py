@@ -179,6 +179,17 @@ def inject_css():
                 border-color: #cbd5e1 !important;
                 color: #64748b !important;
             }
+            .dev-card {
+                background: #ffffff !important;
+                border-color: #e2e8f0 !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+            }
+            .dev-name {
+                color: #0f172a !important;
+            }
+            .dev-role {
+                color: #64748b !important;
+            }
         """
 
     base_css = """
@@ -955,6 +966,91 @@ def inject_css():
             .stream-placeholder .icon {
                 font-size: 2.8rem;
                 margin-bottom: 0.6rem;
+            }
+
+            /* ---- Developer Cards Styling ---- */
+            .dev-card {
+                background: linear-gradient(145deg, #101528, #0c0f1d);
+                border: 1px solid #1f2742;
+                border-radius: 16px;
+                padding: 1.6rem 1.2rem 1.4rem 1.2rem;
+                text-align: center;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                position: relative;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+                height: 100%;
+            }
+            .dev-card::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3.5px;
+                background: linear-gradient(90deg, #6366f1, #a855f7, #3b82f6);
+                opacity: 0.85;
+            }
+            .dev-card:hover {
+                transform: translateY(-5px);
+                border-color: #6366f1;
+                box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+            }
+            .dev-avatar {
+                width: 68px;
+                height: 68px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #4f46e5, #7c3aed);
+                color: #ffffff;
+                font-size: 1.35rem;
+                font-weight: 800;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.9rem;
+                box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+                border: 2px solid rgba(255, 255, 255, 0.2);
+            }
+            .dev-name {
+                font-size: 1.18rem;
+                font-weight: 700;
+                color: #f8fafc;
+                margin-bottom: 0.25rem;
+                text-decoration: none !important;
+                transition: color 0.2s ease;
+            }
+            .dev-name:hover {
+                color: #818cf8 !important;
+            }
+            .dev-role {
+                font-size: 0.82rem;
+                color: #94a3b8;
+                margin-bottom: 1.1rem;
+                font-weight: 500;
+                line-height: 1.35;
+            }
+            .dev-linkedin-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 7px;
+                background: #0a66c2;
+                color: #ffffff !important;
+                text-decoration: none !important;
+                padding: 0.5rem 1.2rem;
+                border-radius: 999px;
+                font-size: 0.84rem;
+                font-weight: 600;
+                box-shadow: 0 2px 10px rgba(10, 102, 194, 0.4);
+                transition: all 0.2s ease;
+                margin-top: auto;
+            }
+            .dev-linkedin-btn:hover {
+                background: #004182;
+                transform: scale(1.04);
+                box-shadow: 0 4px 14px rgba(10, 102, 194, 0.6);
             }
         """
 
@@ -2610,6 +2706,91 @@ def render_about_page():
                     - **Automatic Evidence Archiving**: Every violation captures an isolated face/upper body photo in `static/faces/` for audit compliance.
                     """
                 )
+
+    # ------------------------------------------------------------------
+    # DEVELOPED BY / ENGINEERING TEAM SECTION
+    # ------------------------------------------------------------------
+    st.markdown(
+        """
+        <div style="margin-top: 2rem; margin-bottom: 0.8rem;">
+            <h2 style="font-size: 1.45rem; font-weight: 800; display: flex; align-items: center; gap: 8px; margin: 0 0 4px 0;">
+                👨‍💻 Developed By
+            </h2>
+            <p style="font-size: 0.88rem; color: #8b93a7; margin: 0;">
+                Engineered with passion by the RASED Computer Vision & AI Safety Development Team.
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    dev_col1, dev_col2, dev_col3 = st.columns(3, gap="medium")
+
+    with dev_col1:
+        st.markdown(
+            """
+            <div class="dev-card">
+                <div class="dev-avatar" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+                    AS
+                </div>
+                <a href="https://www.linkedin.com/in/abdelrahman-sobhyi" target="_blank" class="dev-name">
+                    Abdel Rahman Sobhy
+                </a>
+                <div class="dev-role">
+                    AI & Computer Vision Engineer
+                </div>
+                <a href="https://www.linkedin.com/in/abdelrahman-sobhyi" target="_blank" class="dev-linkedin-btn">
+                    <svg style="width:14px;height:14px;fill:currentColor;" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn Profile ↗
+                </a>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with dev_col2:
+        st.markdown(
+            """
+            <div class="dev-card">
+                <div class="dev-avatar" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">
+                    AS
+                </div>
+                <a href="https://www.linkedin.com/in/ammar-salah99" target="_blank" class="dev-name">
+                    Ammar Salah
+                </a>
+                <div class="dev-role">
+                    Machine Learning & Software Engineer
+                </div>
+                <a href="https://www.linkedin.com/in/ammar-salah99" target="_blank" class="dev-linkedin-btn">
+                    <svg style="width:14px;height:14px;fill:currentColor;" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn Profile ↗
+                </a>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with dev_col3:
+        st.markdown(
+            """
+            <div class="dev-card">
+                <div class="dev-avatar" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+                    RS
+                </div>
+                <a href="https://www.linkedin.com/in/ramiz-sayed-b06698169" target="_blank" class="dev-name">
+                    Ramiz Sayed
+                </a>
+                <div class="dev-role">
+                    Computer Vision & System Architect
+                </div>
+                <a href="https://www.linkedin.com/in/ramiz-sayed-b06698169" target="_blank" class="dev-linkedin-btn">
+                    <svg style="width:14px;height:14px;fill:currentColor;" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn Profile ↗
+                </a>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
 
 # ----------------------------------------------------------------------------
