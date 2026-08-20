@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Database (generated at runtime)
+ppe_guard.db
+
+# Runtime logs (regenerated each session)
+detection_log.csv
+events_log.csv
+
+# Compressed archives
+*.rar
+*.zip
+*.7z
+
+# Face crops (generated at runtime)
+static/faces/*.jpg
+static/faces/*.jpeg
+static/faces/*.png
+
+# Model weights (too large for GitHub — download separately)
+weights/*.pt
